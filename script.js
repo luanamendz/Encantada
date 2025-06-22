@@ -25,11 +25,11 @@ for (let i = 0; i < quantidadeBonecos; i++) {
 
 // 💌 Frases escondidas nos emojis
 const mensagensOriginais = [
-  "Se você fosse crime, eu já tava preso por pensar tanto em você.",
+  "Se você fosse crime, eu já tava presa por pensar tanto em você.",
   "Se você fosse dívida, eu parcelava só pra ficar mais tempo contigo.",
   "Se você fosse mentira, eu ia querer acreditar só pra te ter por perto.",
   "Se você fosse problema, eu resolvia até sem ajuda.",
-  "Se fosse cilada, eu ia cair só pra estar com você."
+  "Se você fosse cilada, eu ia cair só pra estar com você."
 ];
 
 let mensagensDisponiveis = [...mensagensOriginais];
