@@ -1,4 +1,77 @@
-/* BOTÕES SECRETOS */
+/* ========================== */
+/* 🌸 ESTILO GERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffe6ec;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: #d6336c;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  z-index: 10;
+  position: relative;
+}
+
+p {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  z-index: 10;
+  position: relative;
+}
+
+/* ========================== */
+/* 🎧 Spotify Player */
+.spotify-player {
+  margin: 0.5rem auto;
+  width: 100%;
+  max-width: 660px;
+  height: 80px;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 8px 20px rgba(214, 51, 108, 0.3);
+  z-index: 10;
+  position: relative;
+}
+
+/* ========================== */
+/* ❤️ Chuva de Corações */
+.heart {
+  position: fixed;
+  color: red;
+  font-size: 20px;
+  pointer-events: none;
+  animation: fall linear infinite;
+  z-index: 0;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.7;
+  }
+}
+
+/* ========================== */
+/* 💌 Botões Secretos */
 .secret-button {
   position: fixed;
   background-color: transparent;
@@ -7,13 +80,15 @@
   z-index: 15;
   opacity: 0.3;
   transition: opacity 0.3s;
+  font-size: 1.5rem;
 }
 
 .secret-button:hover {
   opacity: 0.9;
 }
 
-/* Modal */
+/* ========================== */
+/* 🎁 Modal de Mensagem */
 .modal {
   display: none;
   position: fixed;
