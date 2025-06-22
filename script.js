@@ -1,4 +1,4 @@
-// Bonequinhos SVG pulando
+// 🧍‍♂️ Bonequinhos SVG pulando
 const quantidade = 15;
 
 for (let i = 0; i < quantidade; i++) {
@@ -22,8 +22,8 @@ for (let i = 0; i < quantidade; i++) {
   document.body.appendChild(svg);
 }
 
-// 🔥 Frases escondidas de impacto, charme e sedução
-const mensagens = [
+// 🔥 Frases escondidas
+const mensagensOriginais = [
   "Se você fosse crime, eu já tava preso por passar muito tempo pensando em você.",
   "Se você fosse dívida, eu parcelava só pra ficar com você mais tempo.",
   "Se fosse mentira, eu ia querer acreditar só pra ficar perto.",
@@ -31,15 +31,21 @@ const mensagens = [
   "Se fosse cilada, eu ia cair só pra passar mais tempo contigo."
 ];
 
-// 📨 Abre o modal com frase aleatória
+let mensagensDisponiveis = [...mensagensOriginais]; // Copia inicial
+
 function abrirMensagem() {
+  if (mensagensDisponiveis.length === 0) {
+    mensagensDisponiveis = [...mensagensOriginais]; // Reset quando acabar
+  }
+
+  const index = Math.floor(Math.random() * mensagensDisponiveis.length);
+  const mensagemSelecionada = mensagensDisponiveis.splice(index, 1)[0]; // Remove do array
+
   const modal = document.getElementById('modal');
-  const mensagem = mensagens[Math.floor(Math.random() * mensagens.length)];
-  document.getElementById('mensagem').innerText = mensagem;
+  document.getElementById('mensagem').innerText = mensagemSelecionada;
   modal.style.display = 'block';
 }
 
-// ❌ Fecha o modal
 function fecharModal() {
   document.getElementById('modal').style.display = 'none';
 }
