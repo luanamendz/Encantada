@@ -1,0 +1,52 @@
+/* BOTÕES SECRETOS */
+.secret-button {
+  position: fixed;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 15;
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+
+.secret-button:hover {
+  opacity: 0.9;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(214, 51, 108, 0.4);
+  max-width: 90%;
+  width: 400px;
+  text-align: center;
+}
+
+.modal p {
+  color: #d6336c;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+.close {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #d6336c;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close:hover {
+  background-color: #b2204f;
+}
