@@ -1,11 +1,9 @@
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Corpo */
 body {
   background-color: #000;
   color: #fff;
@@ -19,7 +17,6 @@ body {
   position: relative;
 }
 
-/* Título e texto */
 h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
@@ -35,7 +32,6 @@ p {
   position: relative;
 }
 
-/* Spotify */
 .spotify-player {
   margin: 0.5rem auto;
   width: 100%;
@@ -48,7 +44,6 @@ p {
   z-index: 10;
 }
 
-/* Bonequinhos SVG pulando */
 .svg-boneco {
   position: fixed;
   pointer-events: none;
@@ -67,7 +62,6 @@ p {
   100% { transform: rotate(360deg); }
 }
 
-/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -105,7 +99,6 @@ p {
   background-color: #ddd;
 }
 
-/* Botões secretos */
 .secret-button {
   position: fixed;
   background-color: transparent;
