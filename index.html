@@ -1,216 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pra Você ❤️</title>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    background-color: #ffe6ec; /* fundo rosa claro */
-    overflow: hidden;
-    font-family: 'Poppins', sans-serif;
-    color: #d6336c;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 1;
-  }
-
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    z-index: 10;
-    position: relative;
-  }
-
-  p {
-    font-size: 1.3rem;
-    max-width: 700px;
-    margin: 0 auto 2rem auto;
-    z-index: 10;
-    position: relative;
-  }
-
-  .spotify-player {
-    margin: 0.5rem auto;
-    width: 100%;
-    max-width: 660px;
-    height: 80px;
-    border-radius: 16px;
-    border: none;
-    box-shadow: 0 8px 20px rgba(214, 51, 108, 0.3);
-    z-index: 10;
-    position: relative;
-  }
-
-  /* Corações caindo */
-  .heart {
-    position: fixed;
-    color: red;
-    font-size: 20px;
-    pointer-events: none;
-    animation: fall linear infinite;
-    z-index: 0;
-  }
-
-  @keyframes fall {
-    0% {
-      transform: translateY(-100px) rotate(0deg);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(110vh) rotate(360deg);
-      opacity: 0.7;
-    }
-  }
-
-  /* BOTÕES SECRETOS */
-  .secret-button {
-    position: fixed;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 15;
-    opacity: 0.3;
-    transition: opacity 0.3s;
-    font-size: 1.5rem;
-  }
-
-  .secret-button:hover {
-    opacity: 0.9;
-  }
-
-  /* Modal */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(214, 51, 108, 0.4);
-    max-width: 90%;
-    width: 400px;
-    text-align: center;
-  }
-
-  .modal p {
-    color: #d6336c;
-    font-size: 1.3rem;
-    line-height: 1.6;
-  }
-
-  .close {
-    margin-top: 1.5rem;
-    padding: 0.7rem 1.5rem;
-    background-color: #d6336c;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .close:hover {
-    background-color: #b2204f;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pra Você ❤️</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<h1>Pra Você ❤️</h1>
-<p>Quando o mundo pesa... Deixa essas músicas, esses corações e essas mensagens lembrarem você que você é muito amada.</p>
+  <h1>Pra Você ❤️</h1>
+  <p>Quando o mundo pesa... Deixa essas músicas, esses bonequinhos e essas mensagens lembrarem você que você é muito amada.</p>
 
-<!-- 🎧 Spotify Players -->
-<iframe class="spotify-player" 
-  src="https://open.spotify.com/embed/track/5FgPwJ7Nh2FVmIXviKl2VF?utm_source=generator" 
-  frameborder="0" 
-  allowtransparency="true" 
-  allow="encrypted-media">
-</iframe>
+  <!-- Spotify Players -->
+  <iframe
+    class="spotify-player"
+    src="https://open.spotify.com/embed/track/5FgPwJ7Nh2FVmIXviKl2VF?utm_source=generator"
+    frameborder="0"
+    allowtransparency="true"
+    allow="encrypted-media"
+  ></iframe>
 
-<iframe class="spotify-player" 
-  src="https://open.spotify.com/embed/track/0815caqt2Lytro5EIzMufT?utm_source=generator" 
-  frameborder="0" 
-  allowtransparency="true" 
-  allow="encrypted-media">
-</iframe>
+  <iframe
+    class="spotify-player"
+    src="https://open.spotify.com/embed/track/0815caqt2Lytro5EIzMufT?utm_source=generator"
+    frameborder="0"
+    allowtransparency="true"
+    allow="encrypted-media"
+  ></iframe>
 
-<iframe class="spotify-player" 
-  src="https://open.spotify.com/embed/track/65GbQI9VDTs7vo6MJL2iJA?utm_source=generator" 
-  frameborder="0" 
-  allowtransparency="true" 
-  allow="encrypted-media">
-</iframe>
+  <iframe
+    class="spotify-player"
+    src="https://open.spotify.com/embed/track/65GbQI9VDTs7vo6MJL2iJA?utm_source=generator"
+    frameborder="0"
+    allowtransparency="true"
+    allow="encrypted-media"
+  ></iframe>
 
-<!-- 🎁 Modal de Mensagem -->
-<div id="modal" class="modal">
-  <p id="mensagem"></p>
-  <button class="close" onclick="fecharModal()">Fechar</button>
-</div>
+  <!-- Modal de mensagem -->
+  <div id="modal" class="modal">
+    <p id="mensagem"></p>
+    <button class="close" onclick="fecharModal()">Fechar</button>
+  </div>
 
-<!-- 💌 Botões secretos -->
-<button class="secret-button" style="top: 20%; left: 10%;" onclick="abrirMensagem()">💌</button>
-<button class="secret-button" style="top: 60%; left: 80%;" onclick="abrirMensagem()">💖</button>
-<button class="secret-button" style="top: 40%; left: 50%;" onclick="abrirMensagem()">✨</button>
-<button class="secret-button" style="top: 75%; left: 25%;" onclick="abrirMensagem()">🎁</button>
-<button class="secret-button" style="top: 85%; left: 60%;" onclick="abrirMensagem()">🌸</button>
+  <!-- Botões secretos -->
+  <button class="secret-button" style="top: 20%; left: 10%;" onclick="abrirMensagem()">💌</button>
+  <button class="secret-button" style="top: 60%; left: 80%;" onclick="abrirMensagem()">💖</button>
+  <button class="secret-button" style="top: 40%; left: 50%;" onclick="abrirMensagem()">✨</button>
+  <button class="secret-button" style="top: 75%; left: 25%;" onclick="abrirMensagem()">🎁</button>
+  <button class="secret-button" style="top: 85%; left: 60%;" onclick="abrirMensagem()">🌸</button>
 
-<script>
-  // 🎈 Chuva de corações
-  const createHeart = () => {
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.innerText = '❤️';
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
-    heart.style.animationDuration = (Math.random() * 1 + 0.7) + 's'; // EXTREMAMENTE RÁPIDO
-    document.body.appendChild(heart);
-    setTimeout(() => {
-      heart.remove();
-    }, 2000);
-  };
-  setInterval(createHeart, 50);
-
-  // 💌 Mensagens de carinho
-  const mensagens = [
-    "Você é muito mais forte do que imagina.",
-    "Se soubesse o quanto é incrível, nunca duvidaria de si mesma.",
-    "Isso vai passar, e você vai sair ainda mais maravilhosa disso tudo.",
-    "A vida te escolheu porque sabe que você é luz pra quem te cerca.",
-    "Respira fundo... você é amada, você é necessária, você é única.",
-    "Só queria te lembrar: EU ACREDITO EM VOCÊ. Sempre.",
-    "Você é exatamente tudo que o mundo precisa.",
-    "Que nunca te falte amor próprio e a certeza do quanto é especial.",
-    "Se cuida, você é uma joia rara no mundo.",
-    "Sabe aquele tipo de pessoa que muda o dia dos outros? É você.",
-    "Te admiro mais do que você imagina. Nunca esquece disso."
-  ];
-
-  // 📨 Abrir mensagem
-  function abrirMensagem() {
-    const modal = document.getElementById('modal');
-    const mensagem = mensagens[Math.floor(Math.random() * mensagens.length)];
-    document.getElementById('mensagem').innerText = mensagem;
-    modal.style.display = 'block';
-  }
-
-  // ❌ Fechar modal
-  function fecharModal() {
-    document.getElementById('modal').style.display = 'none';
-  }
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
